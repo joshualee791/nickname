@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mafia Nickname Generator</title>
+  </head>
+  <body>
+    <h1>Mafia Nickname Generator</h1>
+    <button onclick="generateNickname()">Generate Nickname</button>
+    <p id="nickname"></p>
+
+    <script>
+      function generateMafiaNickname() {
+        const italianNames = [
+          "Vito",
+          "Giovanni",
+          "Luca",
+          "Mario",
+          "Enzo",
+          "Gino",
+          "Antonio",
+          "Salvatore",
+          "Marco",
+          "Giuseppe",
+        ];
+        const italianFoods = [
+          "Pasta",
+          "Pizza",
+          "Lasagna",
+          "Parmigiana",
+          "Tiramisu",
+          "Gnocchi",
+          "Bruschetta",
+          "Calzone",
+          "Arancini",
+          "Panini",
+        ];
+
+        const randomFood =
+          italianFoods[Math.floor(Math.random() * italianFoods.length)];
+        const randomName =
+          italianNames[Math.floor(Math.random() * italianNames.length)];
+
+        const nickname = `${randomFood} ${randomName}`;
+
+        return nickname;
+      }
+
+      function generateNickname() {
+        const nicknameElement = document.getElementById("nickname");
+        const nickname = generateMafiaNickname();
+        nicknameElement.innerText = `Your Mafia nickname is: ${nickname}`;
+      }
+    </script>
+  </body>
+</html>
